@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="466.0" prefWidth="1125.0" style="-fx-background-color: linear-gradient(to top left, #0058e0 0%, #00e3b9 100%);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.employeerecord.MainController">
+   <children>
+      <ImageView fitHeight="55.0" fitWidth="66.0" layoutX="420.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@personal-information.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="31.0" layoutY="93.0" prefHeight="254.0" prefWidth="66.0" spacing="15.0">
+         <children>
+            <Label text="ID" />
+            <Label text="First Name" />
+            <Label text="Last Name" />
+            <Label text="Age" />
+            <Label text="Designation" />
+            <Label text="Nationality" />
+            <Label text="Address" />
+         </children>
+      </VBox>
+      <VBox layoutX="113.0" layoutY="93.0" prefHeight="311.0" prefWidth="176.0" spacing="6.0">
+         <children>
+            <TextField fx:id="textFieldId" style="-fx-background-color: rgba(255, 255, 255, 0.5);" />
+            <TextField fx:id="textFieldFname" style="-fx-background-color: rgba(255, 255, 255, 0.5);" />
+            <TextField fx:id="textFieldLname" style="-fx-background-color: rgba(255, 255, 255, 0.5);" />
+            <TextField fx:id="textFieldAge" style="-fx-background-color: rgba(255, 255, 255, 0.5);" />
+            <ComboBox fx:id="comboBoxDesignation" onAction="#comboChanged" prefHeight="26.0" prefWidth="225.0" promptText="Select Designation" style="-fx-background-color: rgba(255, 255, 255, 0.5);" />
+            <TextField fx:id="textFieldNationality" style="-fx-background-color: rgba(255, 255, 255, 0.5);" />
+            <TextArea fx:id="textAreaAddress" prefHeight="142.0" prefWidth="227.0" stylesheets="@Style.css" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addRecord" text="Add Record">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@add-user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonClear" mnemonicParsing="false" onAction="#clearText" text="Clear">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="display" cache="true" layoutX="313.0" layoutY="93.0" onMouseClicked="#mouseAction" prefHeight="311.0" prefWidth="775.0" styleClass="table">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="39.199951171875" text="ID" />
+          <TableColumn fx:id="columnFname" prefWidth="95.199951171875" text="First Name" />
+            <TableColumn fx:id="columnLname" prefWidth="77.5999755859375" text="Last Name" />
+            <TableColumn fx:id="columnAge" prefWidth="58.4000244140625" text="Age" />
+            <TableColumn fx:id="columnDesignation" prefWidth="149.5999755859375" text="Designation" />
+            <TableColumn fx:id="columnNationality" minWidth="0.0" prefWidth="107.20001220703125" text="Nationality" />
+            <TableColumn fx:id="columnAddress" prefWidth="246.40008544921875" text="Address" />
+        </columns>
+         <effect>
+            <DropShadow height="40.0" radius="19.5" width="40.0">
+               <color>
+                  <Color opacity="0.2671232223510742" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TableView>
+      <Label layoutX="487.0" layoutY="32.0" style="-fx-text-fill: #ffffff;" text="Employee Record">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonUpdate" layoutX="313.0" layoutY="417.0" mnemonicParsing="false" onAction="#updateRecordAction" text="Update Record">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@edit.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="buttonDelete" layoutX="446.0" layoutY="417.0" mnemonicParsing="false" onAction="#deleteRecordAction" text="Delete Record">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@trash.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label fx:id="status" layoutX="36.0" layoutY="422.0" />
+   </children>
+</AnchorPane>

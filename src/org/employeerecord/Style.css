@@ -1,0 +1,11 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/ 
+.text-area {
+    text-area-background: linear-gradient(to bottom right, #7fe5df 0%, #7fdce2 100%) ;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background;
+}
